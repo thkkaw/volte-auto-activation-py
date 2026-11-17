@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "volte-auto-activation"
+version = "0.1.0"
+description = "Automatically activate VoLTE for eligible roaming package purchases."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "concurrent-log-handler",
+    "python-dotenv",
+    "flask (>=3.1.3,<4.0.0)",
+    "requests (>=2.34.2,<3.0.0)",
+    "sqlalchemy (>=2.1.6,<3.0.0)",
+    "pymysql (>=1.2.3,<2.0.0)",
+    "gunicorn (>=26.2.0,<27.0.0)",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.setuptools]
+py-modules = ["app", "db", "log_handler", "models", "wsgi_conf"]
